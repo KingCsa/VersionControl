@@ -12,9 +12,19 @@ namespace Excel_NegyedikHet
 {
     public partial class Form1 : Form
     {
+        List<Flat> _flats;
+        RealEstateEntities context = new RealEstateEntities();
+
         public Form1()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        void LoadData()
+        {
+            _flats = context.Flats.ToList();
+
         }
     }
 }
