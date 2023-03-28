@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using Webservice_OtodikHet.Entities;
 using Webservice_OtodikHet.MnbServiceReference;
 
@@ -22,10 +23,10 @@ namespace Webservice_OtodikHet
 
             dataGridView1.DataSource = Rates;
 
-            GetExchangeRates();
+            GetXmlData(GetExchangeRates());
         }
 
-        private void GetExchangeRates()
+        private string GetExchangeRates()
         {
             var mnbService = new MNBArfolyamServiceSoapClient();
 
@@ -39,6 +40,24 @@ namespace Webservice_OtodikHet
             var response = mnbService.GetExchangeRates(request);
 
             var result = response.GetExchangeRatesResult;
+
+            return result;
+        }
+        private void GetXmlData(string result)
+        {
+            var xml = new XmlDocument();
+            xml.LoadXml(result);
+
+            foreach (XmlElement item in xml.DocumentElement)
+            {
+                var date = item.GetAttribute("date");
+
+                Rates.Add(new RateData()
+                {
+                    Date = DateTime.Parse(date)
+                });
+
+            }
         }
     }
 }
