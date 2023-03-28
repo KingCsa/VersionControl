@@ -52,9 +52,18 @@ namespace Webservice_OtodikHet
             {
                 var date = item.GetAttribute("date");
 
+                var rate = (XmlElement)item.ChildNodes[0];
+                var currency = rate.GetAttribute("curr");
+                var unit = int.Parse(rate.GetAttribute("unit"));
+                var value = decimal.Parse(rate.InnerText);
+
                 Rates.Add(new RateData()
                 {
-                    Date = DateTime.Parse(date)
+                    Date = DateTime.Parse(date),
+                    Currency = currency,
+                    Value = unit != 0
+                            ? value / unit
+                            : 0
                 });
 
             }
