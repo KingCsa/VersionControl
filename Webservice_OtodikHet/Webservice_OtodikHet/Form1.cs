@@ -7,15 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Webservice_OtodikHet.Entities;
 using Webservice_OtodikHet.MnbServiceReference;
 
 namespace Webservice_OtodikHet
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> Rates = new BindingList<RateData>();
+
         public Form1()
         {
             InitializeComponent();
+
+            dataGridView1.DataSource = Rates;
+
             GetExchangeRates();
         }
 
