@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mikrosimulation.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,10 @@ namespace Mikrosimulation
         public Form1()
         {
             InitializeComponent();
+
+            Gender g = Gender.Male;
+
+
         }
     }
 }
