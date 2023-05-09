@@ -30,7 +30,7 @@ namespace Mikrosimulation
             {
                 for (int i = 0; i < Population.Count; i++)
                 {
-                   // SinStep();
+                   SimStep(year, Population[i]);
                 }
 
                 var nbrOfMales = (from x in Population
