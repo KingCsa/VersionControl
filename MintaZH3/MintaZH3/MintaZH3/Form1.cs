@@ -85,6 +85,7 @@ namespace MintaZH3
                     }
 
                     sw.Write(gifts);
+                    sw.Write("\n");
                 }
             }
         }
