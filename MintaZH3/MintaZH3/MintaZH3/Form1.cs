@@ -34,6 +34,16 @@ namespace MintaZH3
                 return;
             }
 
+            c.Name = txtName.Text;
+            c.YearlyBehaviour = (Behaviour)behaviour;
+
+            children.Add(c);
+
+            var badCount = (from x in children
+                            where x.YearlyBehaviour == Behaviour.Bad ||
+                            x.YearlyBehaviour == Behaviour.Worst
+                            select x).Count();
+
         }
     }
 }
