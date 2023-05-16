@@ -1,4 +1,5 @@
 ﻿using MintaZH3.Enum;
+using PackMaker;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace MintaZH3.Entities
     {
         public string Name { get; set; }
         public Behaviour YearlyBehaviour { get; set; }
+        public List<Gift> Gifts { get; set; }
 
         public bool CheckBehaviour(int value)
         {
