@@ -43,6 +43,7 @@ namespace MintaZH3
                             where x.YearlyBehaviour == Behaviour.Bad ||
                             x.YearlyBehaviour == Behaviour.Worst
                             select x).Count();
+            lblBadCount.Text = string.Format("Rosszak száma: {0}", badCount);
 
         }
     }

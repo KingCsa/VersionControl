@@ -36,7 +36,7 @@ namespace MintaZH3
             this.labelName = new System.Windows.Forms.Label();
             this.labelBehaviour = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBadCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,22 +103,22 @@ namespace MintaZH3
             this.dataGridView1.Size = new System.Drawing.Size(523, 334);
             this.dataGridView1.TabIndex = 6;
             // 
-            // label1
+            // lblBadCount
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(244, 389);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Rosszak száma: 0";
+            this.lblBadCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblBadCount.AutoSize = true;
+            this.lblBadCount.Location = new System.Drawing.Point(244, 389);
+            this.lblBadCount.Name = "lblBadCount";
+            this.lblBadCount.Size = new System.Drawing.Size(93, 13);
+            this.lblBadCount.TabIndex = 7;
+            this.lblBadCount.Text = "Rosszak száma: 0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblBadCount);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.labelBehaviour);
             this.Controls.Add(this.labelName);
@@ -143,7 +143,7 @@ namespace MintaZH3
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelBehaviour;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBadCount;
     }
 }
 
