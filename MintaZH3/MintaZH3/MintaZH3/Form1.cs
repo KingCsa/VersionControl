@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MintaZH3.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace MintaZH3
 {
     public partial class Form1 : Form
     {
+        BindingList<Child> children = new BindingList<Child>();
+
         public Form1()
         {
             InitializeComponent();
+            dataGridView1.DataSource = children;
         }
     }
 }
