@@ -1,4 +1,5 @@
 ﻿using MintaZH3.Entities;
+using MintaZH3.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,20 @@ namespace MintaZH3
         {
             InitializeComponent();
             dataGridView1.DataSource = children;
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            var c = new Child();
+
+            var behaviour = int.Parse(txtBehaviour.Text);
+
+            if (!c.CheckBehaviour(behaviour))
+            {
+                MessageBox.Show("Helytelen érték! Csak 1 és 5 közötti szám adható meg!");
+                return;
+            }
+
         }
     }
 }
